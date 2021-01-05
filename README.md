@@ -1,6 +1,6 @@
 # Zadanie Frontend developer GoodRequest
 
-Cieľom zadania je vytvoriť jednoduchú aplikáciu v Reacte, ktorá slúži ako formulár pre (neexistujúcu) nadáciu GoodBoy na podporu slovenským útulkov pre psy. 
+Cieľom zadania je vytvoriť jednoduchú aplikáciu v Reacte, ktorá slúži ako formulár pre (neexistujúcu) nadáciu GoodBoy na podporu slovenských útulkov pre psy. 
 
 **Aplikácia by mala umožňovať potenciálnym podporovateľom:**
 
