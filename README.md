@@ -3,6 +3,7 @@
 Cieľom zadania je vytvoriť jednoduchú aplikáciu v Reacte, ktorá slúži ako formulár pre (neexistujúcu) nadáciu GoodBoy na podporu slovenským útulkov pre psy. 
 
 **Aplikácia by mala umožňovať potenciálnym podporovateľom:**
+
 *  zvoliť si formu pomoci - všeobecný príspevok pre nadáciu alebo príspevok pre konkretný útulok (povinné pole)
 *  vybrať si konkrétny útulok zo zoznamu zapojených útulkov (nepovinné v prípade všeobecného príspevku, v opačnom prípade povinné pole)
 *  zvoliť si výšku príspevku, pričom je možné nastaviť aj vlastnú hodnotu (povinné pole)
