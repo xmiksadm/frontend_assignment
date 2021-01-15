@@ -8,10 +8,11 @@ Cieľom zadania je vytvoriť jednoduchú aplikáciu v Reacte, ktorá slúži ako
 *  vybrať si konkrétny útulok zo zoznamu zapojených útulkov (nepovinné v prípade všeobecného príspevku, v opačnom prípade povinné pole)
 *  zvoliť si výšku príspevku, pričom je možné nastaviť aj vlastnú hodnotu (povinné pole)
 *  vyplniť svoje osobné údaje:
-    **  meno - nepovinné pole (2-20 znakov)
-    **  priezvisko - povinné pole (2-30 znakov)
-    **  e-mail - validný formát e-mailovej adresy
-    **  telefón - slovenské alebo české číslo s predvoľbou +420 / +421 so zobrazením zvolenej krajiny vo forme vlajky štátu
+
+    *  meno - nepovinné pole (2-20 znakov)
+    *  priezvisko - povinné pole (2-30 znakov)
+    *  e-mail - validný formát e-mailovej adresy
+    *  telefón - slovenské alebo české číslo s predvoľbou +420 / +421 so zobrazením zvolenej krajiny vo forme vlajky štátu
 *  potvrdiť súhlas so spracovaním osobných údajov (povinné pole)
 *  odoslať zvalidovaný formulár, prípadne zrozumiteľne oznámiť používateľovi chybový stav
 
