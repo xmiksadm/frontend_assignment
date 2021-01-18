@@ -11,7 +11,7 @@ Cieľom zadania je vytvoriť jednoduchú aplikáciu v Reacte, ktorá slúži ako
 
     *  meno - nepovinné pole (2-20 znakov)
     *  priezvisko - povinné pole (2-30 znakov)
-    *  e-mail - validný formát e-mailovej adresy
+    *  e-mail - validný formát e-mailovej adresy
     *  telefón - slovenské alebo české číslo s predvoľbou +420 / +421 so zobrazením zvolenej krajiny vo forme vlajky štátu
     *  potvrdiť súhlas so spracovaním osobných údajov (povinné pole)
     *  odoslať zvalidovaný formulár, prípadne zrozumiteľne oznámiť používateľovi chybový stav
