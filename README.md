@@ -1,6 +1,6 @@
 # Zadanie Frontend developer GoodRequest
 
-Cieľom zadania je vytvoriť jednoduchú aplikáciu v Reacte, ktorá slúži ako formulár pre (neexistujúcu) nadáciu GoodBoy na podporu slovenských útulkov pre psy. 
+Cieľom zadania je vytvoriť jednoduchú aplikáciu v Reacte, ktorá slúži ako formulár pre nadáciu GoodBoy na podporu slovenských útulkov pre psy. 
 
 **Aplikácia by mala umožňovať potenciálnym podporovateľom:**
 
@@ -17,9 +17,18 @@ Cieľom zadania je vytvoriť jednoduchú aplikáciu v Reacte, ktorá slúži ako
 *  odoslať zvalidovaný formulár, prípadne zrozumiteľne oznámiť používateľovi chybový stav
 
 Pre účely zadania sme vytvorili 2 jednoduché API endpointy - GET zoznamu útulkov zapojených do projektu a POST na odoslanie obsahu formuláru. Dokumentáciu k nim nájdete na nasledovnom odkaze:
-// TODO - Pridať link na APIDOC
+frontend-assignment-api.goodrequest.com/apidoc
 
 Grafické podklady pre zadanie nájdete na nasledovnom odkaze (registrácia do toolu Figma je zdarma):
 https://www.figma.com/file/FyxU4Zzp54tOrmQBNTly7G/GoodRequest-Frontend-Assignment
 
-// TODO - Pridať akceptačné kritériá
+**Kritériá na použité technológie:**
+
+*  Aplikácia musí byť napísaná v React.js, na setup projektu odporúčame create-react-app https://github.com/facebook/create-react-app
+*  Na state management musí byť použitý Redux https://redux.js.org/
+*  Štruktúru projektu nechávame kompletne na vás
+*  Nice to have:
+
+    *  Použiť TypeScript
+    *  Použiť lokalizačnú knižnicu na stringy (napr. i18next)
+    *  Použiť styled-components
