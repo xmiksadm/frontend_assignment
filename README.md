@@ -21,6 +21,8 @@ Pre účely zadania sme vytvorili 2 jednoduché API endpointy - GET zoznamu útu
 Grafické podklady pre zadanie nájdete na nasledovnom odkaze (registrácia do toolu Figma je zdarma):
 https://www.figma.com/file/FyxU4Zzp54tOrmQBNTly7G/GoodRequest-Frontend-Assignment
 
+Nemusíte si z Figmy exportovať assety ako logá, ikonky alebo obrázky - môžete použiť ľubovoľné vlastné. Mali by ste ale dodržať približnú vizuálnu podobu aplikácie.
+
 **Kritériá na použité technológie:**
 
 *  Aplikácia musí byť napísaná v React.js, na setup projektu odporúčame create-react-app https://github.com/facebook/create-react-app
@@ -31,6 +33,11 @@ https://www.figma.com/file/FyxU4Zzp54tOrmQBNTly7G/GoodRequest-Frontend-Assignmen
     *  Použiť TypeScript
     *  Použiť lokalizačnú knižnicu na stringy (napr. i18next)
     *  Použiť styled-components
+    
+*  Ak vám ostane čas alebo chuť :):
+
+    *  Responzívne zobrazenie
+    *  SEO (implementovať og:image a rôzne titles a descriptions na jednotlivých stepoch formuláru)
     
 **Postup odovzdania zadania:**
 
