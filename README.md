@@ -37,3 +37,7 @@ https://www.figma.com/file/FyxU4Zzp54tOrmQBNTly7G/GoodRequest-Frontend-Assignmen
 * Naklonujte si tento repozitár k sebe
 * Umiestnite ho do verejného github / bitbucket repozitáru a svoju prácu priebežne commitujte
 * Commit messages a spôsob commitovania budú tiež predmetom hodnotenia
+
+**Ak by ste mali hocijaké otázky alebo ste sa niekde zasekli:**
+
+* Kedykoľvek napíšte otázky alebo nás požiadajte o pomoc na peter.reguli@goodrequest.com - radi vám poradíme ;)
