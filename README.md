@@ -24,10 +24,16 @@ https://www.figma.com/file/FyxU4Zzp54tOrmQBNTly7G/GoodRequest-Frontend-Assignmen
 **Kritériá na použité technológie:**
 
 *  Aplikácia musí byť napísaná v React.js, na setup projektu odporúčame create-react-app https://github.com/facebook/create-react-app
-*  Na state management musí byť použitý Redux https://redux.js.org/
+*  Na state management musí byť použitý Redux https://redux.js.org/ 
 *  Štruktúru projektu nechávame kompletne na vás
-*  Nice to have:
+*  Nice to have (nepovinné kritériá):
 
     *  Použiť TypeScript
     *  Použiť lokalizačnú knižnicu na stringy (napr. i18next)
     *  Použiť styled-components
+    
+**Postup odovzdania zadania:**
+
+* Naklonujte si tento repozitár k sebe
+* Umiestnite ho do verejného github / bitbucket repozitáru a svoju prácu priebežne commitujte
+* Commit messages a spôsob commitovania budú tiež predmetom hodnotenia
