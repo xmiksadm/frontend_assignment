@@ -21,7 +21,7 @@ Pre účely zadania sme vytvorili 2 jednoduché API endpointy - GET zoznamu útu
 Grafické podklady pre zadanie nájdete na nasledovnom odkaze (registrácia do toolu Figma je zdarma):
 https://www.figma.com/file/FyxU4Zzp54tOrmQBNTly7G/GoodRequest-Frontend-Assignment
 
-Nemusíte si z Figmy exportovať assety ako logá, ikonky alebo obrázky - môžete použiť ľubovoľné vlastné. Mali by ste ale dodržať približnú vizuálnu podobu aplikácie.
+Vizuálna kvalita spracovania aplikácie a štýlovanie je tiež predmetom hodnotenia. Plynulé a user friendly UI s peknými prechodmi a animáciami sú plusový bod.
 
 **Kritériá na použité technológie:**
 
@@ -49,3 +49,53 @@ Nemusíte si z Figmy exportovať assety ako logá, ikonky alebo obrázky - môž
 **Ak by ste mali hocijaké otázky alebo ste sa niekde zasekli:**
 
 * Kedykoľvek napíšte otázky alebo nás požiadajte o pomoc na peter.reguli@goodrequest.com - radi vám poradíme ;)
+
+# Assignement for Frontend developer - GoodRequest
+
+The aim of the assignment is to create a simple application in React that serves as a form for the GoodBoy Foundation to support Slovak shelters for dogs. 
+
+**The application should allow potential supporters to:**
+*  choose the form of help – general contribution for the foundation or contribution for specific shelter (mandatory field)
+*  choose a specific shelter from the list of involved shelters (optional in the case of the general contribution, otherwise mandatory field)
+*  choose the amount of the contribution, while it is possible to set your own value (mandatory field)
+*  fill in your personal data:
+
+    * name - optional field (2-20 characters)
+    * surname - mandatory field (2-30 characters)
+    * e-mail - valid format of the e-mail address
+    * telephone - Slovak or Czech number with area code +420 / +421 with a display of the selected country in the form of the flag
+    * confirm consent to the processing of personal data (mandatory field)
+    * send a validated form, or clearly inform the user about an error condition
+    
+For the purposes of the assignment, we created 2 simple API endpoints - GET the list of shelters involved in the project and POST to submit the content of the form. Documentation for them can be found at the following link: https://frontend-assignment-api.goodrequest.com/apidoc/
+
+Graphic materials for the assignment can be found at the following link (registration in Figma tool is free): https://www.figma.com/file/FyxU4Zzp54tOrmQBNTly7G/GoodRequest-Frontend-Assignment
+
+Visual quality of the application and styling is also a part of the evaluation. Smooth and user friendly UI with nice transitions and animations is a plus.
+
+**Criteria for the technologies used:**
+
+* The application must be written in React.js, for project setup we recommend create-react-app https://github.com/facebook/create-react-app
+* Redux must be used for state management https://redux.js.org/
+* We leave the structure of the project completely to you
+* Nice to have (optional criteria):
+
+    *  Use TypeScript
+    *  Use localization library for strings (e.g. i18next)
+    *  Use styled-components
+    
+* If you have some spare time :):
+
+    *  Responsive design
+    *  SEO (implement og:image and various titles and descriptions on individual steps of the form)
+    
+**To submit an assignment:**
+
+* Clone this repository to you
+* Put it in public github / bitbucket repository and commit your work continuously
+* Grant access to the repository to the account peter.reguli@goodrequest.com (in case of the private repo on bitbucket) or send a link to public github repo to this email.
+
+Commit messages and the way of commmiting will also be evaluated.
+
+**If you have any questions or are stuck somewhere:**
+* Write your questions at any time or ask us for help at peter.reguli@goodrequest.com - we will be happy to help you ;)
