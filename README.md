@@ -99,4 +99,5 @@ Visual quality of the application and styling is also a part of the evaluation. 
 Commit messages and the way of commmiting will also be evaluated.
 
 **If you have any questions or are stuck somewhere:**
+
 * Write your questions at any time or ask us for help at peter.reguli@goodrequest.com - we will be happy to help you ;)
