@@ -1,7 +1,11 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 export default function Form() {
     const [name, setName] = useState("");
+
+    const handleSubmit = () => {
+        console.log('Submit handled')
+    }
 
     return (
         <form>
@@ -32,7 +36,7 @@ export default function Form() {
                     type="checkbox" 
                 />
             </label><br/>
-            <button>Send</button>
+            <button onClick={handleSubmit}>Send</button>
         </form>
     )
 }
