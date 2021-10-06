@@ -2,45 +2,97 @@
 
 /* base styles */
 * {
-  margin: 0;
-  font-family: "Quicksand";
-  color: #333;
+    margin: 0;
+    font-family: "Quicksand";
+    color: #333;
 }
 body {
     background-image: url("./kuco.png");
-    background-size: 18%;
+    background-size: 16%;
     background-repeat: no-repeat;
-    background-position: right 20% bottom 10%;
+    background-position: center right 20%;
 }
+.logo {
+    float: left;
+    height: 50px;
+}
+
 /* navigation bar */
 .navbar {
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  max-width: 600px;
-  margin: 0 auto;
-  border-bottom: 1px solid #f2f2f2;
-  width: 1440px;
-  height: 40px;
-  left: 0px;
-  top: 0px;
+    background-color: #FEFEFE;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    border-bottom: 1px solid #f2f2f2;
 }
 .navbar h1 {
     color: #BB6B3D;
+    margin-left: 10%;
 }
 .navbar .links {
-  margin-left: auto;
+    margin-left: auto;
+    margin-right: 10%;
 }
 .navbar a {
-  margin-left: 16px;
-  text-decoration: none;
-  padding: 6px;
+    margin-left: 16px;
+    text-decoration: none;
+    padding: 6px;
 }
 .navbar a:hover {
-  color: #f1356d;
+    color: #BB6B3D;
 }
+
+.row {
+    display: flex;
+    width: 80%;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+    flex: 50%;
+    padding: 10px;
+    height: 100px; /* Should be removed. Only for demonstration */
+}
+
 .content {
-  max-width: 600px;
-  margin: 40px auto;
-  padding: 20px;
+    max-width: 50%;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* footer */
+.footer {
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    border-top: 1px solid #f2f2f2;
+    max-width: 80%;
+}
+.footer h1 {
+    color: #321E0F;
+}
+.footer a {
+    text-decoration: none;
+    padding: 6px;
+}
+.footer a:hover {
+    color: #BB6B3D;
+}
+
+div#column1 {
+    margin-top: -70px;
+    width: 200px;
+}
+div#column2, div#column3 {
+    margin-left: auto;
+    width: 200px;
+    text-align: center;
+    vertical-align: middle;
+}
+div#column4 {
+    margin-left: auto;
+    width: 200px;
 }
