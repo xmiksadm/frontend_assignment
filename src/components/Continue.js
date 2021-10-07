@@ -34,9 +34,15 @@ const ContinueButton = styled.button `
 `
 
 const Continue = () => {
+
+    function handleSubmit() {
+        console.log('Your input value is: ' )
+        //Send state to the server code
+    }
+        
     return (
         <div>
-            <ContinueButton>Pokračovať</ContinueButton>
+            <ContinueButton onClick={handleSubmit}>Pokračovať</ContinueButton>
         </div>
     )
 }

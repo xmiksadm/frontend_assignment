@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components'
 import TwoButtons from "../components/TwoButtons";
 import Dropdown from "../components/Dropdown";
 import Continue from "../components/Continue";
+import DonateSum from "../components/DonateSum";
 
 function First() {
 
@@ -11,31 +12,7 @@ function First() {
             <h1 className="h1step1">Vyberte si možnosť, ako chcete pomôcť </h1>
             <TwoButtons />
             <Dropdown />
-            
-            <div className="money">
-                <h3>Suma, ktorou chcem prispieť</h3>
-                <div className="row">
-                    <button style={{borderRadius: '8px'}}>
-                        <h3 className="column">5 €</h3>
-                    </button>
-                    <button style={{borderRadius: '8px'}}>
-                        <h3 className="column">10 €</h3>
-                    </button>
-                    <button style={{borderRadius: '8px'}}>
-                        <h3 className="column">20 €</h3>
-                    </button>
-                    <button style={{borderRadius: '8px'}}>
-                        <h3 className="column">30 €</h3>
-                    </button>
-                    <button style={{borderRadius: '8px'}}>
-                        <h3 className="column">50 €</h3>
-                    </button>
-                    <button style={{borderRadius: '8px'}}>
-                        <h3 className="column">100 €</h3>
-                    </button>
-                    <input type="text" placeholder="_ €"/>
-                </div>
-            </div>
+            <DonateSum />
             <Continue />
         </div>
     )

@@ -22,8 +22,8 @@ const Dropdown = () => {
 
     return (
         <div>
+            <label><h3>Útulok</h3></label>
             <ShelterForm>
-                <label for="shelters"><h3>Vyberte útulok zo zoznamu</h3></label>
                     {shelters && <ShelterList shelters={shelters} />} 
             </ShelterForm>
         </div>
