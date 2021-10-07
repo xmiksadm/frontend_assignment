@@ -1,4 +1,7 @@
 import img from "./css/logo.png";
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
+
 const Footer = () => {
     return (
         <div className="footer">
@@ -21,8 +24,8 @@ const Footer = () => {
                 <ul>
                     <h4>Nadácia Good Boy</h4><br/>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br/>
-                    <a href="https://www.facebook.com/GoodRequestCom" target="_blank" rel="noreferrer" className="">f</a>
-                    <a href="https://www.instagram.com/goodrequest/" target="_blank" rel="noreferrer" className="">i</a>
+                    <a href="https://www.facebook.com/GoodRequestCom" target="_blank" rel="noreferrer" className=""><FacebookIcon /></a>
+                    <a href="https://www.instagram.com/goodrequest/" target="_blank" rel="noreferrer" className=""><InstagramIcon /></a>
                 </ul>
             </div>
         </div>

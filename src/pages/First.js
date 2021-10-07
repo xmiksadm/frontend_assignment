@@ -1,15 +1,11 @@
 import { useState, useEffect } from "react";
-import ShelterList from "../ShelterList";
+import ShelterList from "../components/ShelterList";
+import styled, { css } from 'styled-components'
+import TwoButtons from "../components/TwoButtons";
+import Dropdown from "../components/Dropdown";
+import Continue from "../components/Continue";
 
 function First() {
-
-    //TODO: add axios get request
-    const [shelter, setShelter] = useState([
-        {id: 1, name: 'prvy'},
-        {id: 2, name: 'druhy'},
-    ]);
-
-    const [name, setName] = useState('treti')
 
     useEffect(() => {
         console.log('use effect ran')
@@ -18,20 +14,8 @@ function First() {
     return (
         <div>
             <h1 className="h1step1">Vyberte si možnosť, ako chcete pomôcť </h1>
-
-            <div className="row">
-                <button style={{borderRadius: '24px 0px 0px 24px'}}>
-                    <h3 className="column">Chcem finančne prispieť konkrétnemu útulku</h3>
-                </button>
-                <button style={{borderRadius: '0px 24px 24px 0px'}}>
-                    <h3 className="column">Chcem finančne prispieť celej nadácii</h3>
-                </button>
-            </div>
-
-            <form className="sheltersForm">
-                <label for="shelters"><h3>Vyberte útulok zo zoznamu</h3></label>
-                    <ShelterList shelter={shelter} />
-            </form>
+            <TwoButtons />
+            <Dropdown />
             
             <div className="money">
                 <h3>Suma, ktorou chcem prispieť</h3>
@@ -57,6 +41,7 @@ function First() {
                     <input type="text" placeholder="_ €"/>
                 </div>
             </div>
+            <Continue />
         </div>
     )
 }
