@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export default function Form() {
+function Second() {
     const [name, setName] = useState("");
 
     const handleSubmit = () => {
@@ -40,3 +40,5 @@ export default function Form() {
         </form>
     )
 }
+
+export default Second;

@@ -21,8 +21,8 @@ const Footer = () => {
                 <ul>
                     <h4>Nadácia Good Boy</h4><br/>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br/>
-                    <a href="https://www.facebook.com/GoodRequestCom" className="">f</a>
-                    <a href="https://www.instagram.com/goodrequest/" className="">i</a>
+                    <a href="https://www.facebook.com/GoodRequestCom" target="_blank" rel="noreferrer" className="">f</a>
+                    <a href="https://www.instagram.com/goodrequest/" target="_blank" rel="noreferrer" className="">i</a>
                 </ul>
             </div>
         </div>

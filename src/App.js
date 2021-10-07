@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import Navbar from "./Navbar";
-import Form from './Form';
-import Step1 from './Step1';
+import Second from './pages/Second';
+import First from './pages/First';
 import Footer from './Footer';
 import { useSelector, useDispatch } from 'react-redux';
 import { increment, decrement } from './actions';
@@ -16,8 +16,8 @@ function App() {
     <div className="App">
       <Navbar />
       <div className="content">
-        <Step1 />
-        <Form />
+        <First />
+        {/* <Second /> */}
         {/* <div>Counter = { counter }</div>
         <button onClick={() => dispatch(increment(2))}>+</button>
         <button onClick={() => dispatch(decrement())}>-</button> */}
