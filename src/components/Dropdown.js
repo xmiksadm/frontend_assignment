@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import ShelterList from "./ShelterList"
 
 const ShelterForm = styled.form `
@@ -8,19 +8,23 @@ const ShelterForm = styled.form `
 
 const Dropdown = () => {
 
-    //TODO: add axios get request
-    const [shelter, setShelter] = useState([
-        {id: 1, name: 'prvy'},
-        {id: 2, name: 'druhy'},
-    ]);
+    const [shelters, setShelters] = useState(null);
 
-    const [name, setName] = useState('treti')
+    useEffect(() => {
+        fetch('https://frontend-assignment-api.goodrequest.com/api/v1/shelters')
+        .then(res => {
+            return res.json();
+        })
+        .then(data => {
+            setShelters(data.shelters)
+        })
+    }, [])
 
     return (
         <div>
             <ShelterForm>
                 <label for="shelters"><h3>Vyberte útulok zo zoznamu</h3></label>
-                    <ShelterList shelter={shelter} />
+                    {shelters && <ShelterList shelters={shelters} />} 
             </ShelterForm>
         </div>
     )

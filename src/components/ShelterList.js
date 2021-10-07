@@ -1,8 +1,8 @@
-const ShelterList = ( {shelter} ) => {
+const ShelterList = ( {shelters} ) => {
     return (
         <div className="shelter-list">
             <select name="shelters" id="shelters">
-                {shelter.map((shelter) => (
+                {shelters.map(shelter => (
                             <option key={shelter.id}>{shelter.name}</option>
                 ))}
             </select>

@@ -1,15 +1,10 @@
-import { useState, useEffect } from "react";
-import ShelterList from "../components/ShelterList";
+import { useState } from "react";
 import styled, { css } from 'styled-components'
 import TwoButtons from "../components/TwoButtons";
 import Dropdown from "../components/Dropdown";
 import Continue from "../components/Continue";
 
 function First() {
-
-    useEffect(() => {
-        console.log('use effect ran')
-    }, [])
 
     return (
         <div>
