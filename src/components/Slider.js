@@ -25,20 +25,24 @@ const OneSlider = styled.div `
 `
 
 const SliderGroup = styled.div `
+
+    max-width: 50%;
+    margin-top: 70px;
+    margin-left: auto;
+    margin-right: auto;
     position: relative;
     display: flex;
     width: 80%;
-    margin-bottom: 3%;
 `
 
 const Slider = () => {
     return (
         <div>
-        <SliderGroup>
-            <OneSlider active></OneSlider>
-            <OneSlider></OneSlider>
-            <OneSlider></OneSlider>
-        </SliderGroup>
+            <SliderGroup>
+                <OneSlider active></OneSlider>
+                <OneSlider></OneSlider>
+                <OneSlider></OneSlider>
+            </SliderGroup>
         </div>
     )
 }

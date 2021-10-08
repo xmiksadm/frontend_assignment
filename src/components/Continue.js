@@ -1,11 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const ContinueButton = styled.button `
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
-    padding: 18px 24px;
+    align-items: center;
+    padding: 19px 23px;
     border: none;
     cursor: pointer;
 
@@ -33,7 +34,7 @@ const ContinueButton = styled.button `
     }
 `
 
-const Continue = () => {
+const Continue = (link) => {
 
     function handleSubmit() {
         console.log('Your input value is: ' )
@@ -41,9 +42,9 @@ const Continue = () => {
     }
         
     return (
-        <div>
+        <Link to={link.link} style={{ textDecoration: 'none' }}>
             <ContinueButton onClick={handleSubmit}>Pokračovať</ContinueButton>
-        </div>
+        </Link>
     )
 }
 

@@ -5,7 +5,8 @@ import Continue from "../components/Continue";
 import DonateSum from "../components/DonateSum";
 
 const H1 = styled.div `
-    padding-bottom: 5%;
+    margin-bottom: 5%;
+    max-width:100%;
     width: 552px;
     height: 104px;
     left: 250px;
@@ -28,7 +29,7 @@ function First() {
             <TwoButtons />
             <Dropdown />
             <DonateSum />
-            <Continue />
+            <Continue link={"/form"} />
         </div>
     )
 }

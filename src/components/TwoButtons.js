@@ -6,8 +6,6 @@ import PetsOutlinedIcon from '@mui/icons-material/PetsOutlined';
 const Pet = styled(PetsOutlinedIcon) `
     filter: invert(100%);
     transform: scale(1.8);
-    ${'' /* width: 800px;
-    height: 80px; */}
     background-color: grey;
     border-radius:50%;
     box-shadow: 0 0 0 10px grey;
@@ -19,8 +17,6 @@ const Pet = styled(PetsOutlinedIcon) `
 
 const Wallet = styled(AccountBalanceWalletOutlinedIcon) `
     transform: scale(1.8);
-    ${'' /* width: 800px;
-    height: 80px; */}
     background-color: grey;
     border-radius:50%;
     box-shadow: 0 0 0 10px grey;
