@@ -4,7 +4,7 @@ import AccountBalanceWalletOutlinedIcon from '@mui/icons-material/AccountBalance
 import PetsOutlinedIcon from '@mui/icons-material/PetsOutlined';
 
 const Pet = styled(PetsOutlinedIcon) `
-    -webkit-filter: invert(100%);
+    filter: invert(100%);
     transform: scale(1.8);
     ${'' /* width: 800px;
     height: 80px; */}
@@ -73,7 +73,7 @@ const Button = styled(ButtonGroup)`
         display: table;
     }
 
-  ${props => props.primary && css`
+  ${props => props.active && css`
     background: linear-gradient(180deg, #CD8B65 0%, #BB6B3D 100%);
     color: white;
     box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07), 0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198), 0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275), 0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035), 0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725), 0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);
@@ -91,7 +91,7 @@ const TwoButtons = () => {
         <div>
             <ButtonGroup>
                 <Button left><Wallet />Chcem finančne prispieť konkrétnemu útulku</Button>
-                <Button right primary><Pet />Chcem finančne prispieť celej nadácii</Button>
+                <Button right active><Pet />Chcem finančne prispieť celej nadácii</Button>
             </ButtonGroup>
         </div>
     )

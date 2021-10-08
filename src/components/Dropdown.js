@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
+import useFetch from '../useFetch'
 import ShelterList from "./ShelterList"
 
 const ShelterForm = styled.form `
@@ -8,23 +9,15 @@ const ShelterForm = styled.form `
 
 const Dropdown = () => {
 
-    const [shelters, setShelters] = useState(null);
-
-    useEffect(() => {
-        fetch('https://frontend-assignment-api.goodrequest.com/api/v1/shelters')
-        .then(res => {
-            return res.json();
-        })
-        .then(data => {
-            setShelters(data.shelters)
-        })
-    }, [])
+    const { data, isPending, error} = useFetch('https://frontend-assignment-api.goodrequest.com/api/v1/shelters')
 
     return (
         <div>
             <label><h3>Útulok</h3></label>
             <ShelterForm>
-                    {shelters && <ShelterList shelters={shelters} />} 
+                { error && <div>{ error }</div>}
+                { isPending && <div>Loading...</div> }
+                { data && <ShelterList shelters={data} />} 
             </ShelterForm>
         </div>
     )

@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import Navbar from "./Navbar";
+import Slider from "./components/Slider"
 import Second from './pages/Second';
 import First from './pages/First';
 import Footer from './Footer';
@@ -16,6 +17,7 @@ function App() {
     <div className="App">
       <Navbar />
       <div className="content">
+        <Slider />
         <First />
         {/* <Second /> */}
         {/* <div>Counter = { counter }</div>

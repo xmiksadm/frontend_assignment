@@ -14,6 +14,10 @@ const Buttons = styled.table `
 const Button = styled.button `
     width: 80%;
     margin: 5px;
+    height: 53px;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 21px;
 
     color: black;
     padding: 12px 2px;
@@ -32,8 +36,15 @@ const Button = styled.button `
 
 const Input = styled.input `
     width: 80%;
-    margin: 5px;
     border-radius: 8px;
+    margin: 5px auto;
+    text-align: center;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 21px;
+
+    background: #FFFFFF;
+    border: 1px solid #DFDFDF;
 `
 
 const DonateSum = () => {
@@ -71,7 +82,7 @@ const DonateSum = () => {
                 <Button onClick={() => donate(30)}>30 €</Button>
                 <Button onClick={() => donate(50)}>50 €</Button>
                 <Button onClick={() => donate(100)}>100 €</Button>
-                <Input onInput={e => handleInput(e.target.value)} type="number" placeholder="_ €"></Input>
+                <Input onInput={e => handleInput(e.target.value)} type="number" placeholder=" _ €"></Input>
             </Buttons>
         </div>
     )

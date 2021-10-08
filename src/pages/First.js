@@ -1,15 +1,30 @@
-import { useState } from "react";
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import TwoButtons from "../components/TwoButtons";
 import Dropdown from "../components/Dropdown";
 import Continue from "../components/Continue";
 import DonateSum from "../components/DonateSum";
 
+const H1 = styled.div `
+    padding-bottom: 5%;
+    width: 552px;
+    height: 104px;
+    left: 250px;
+    top: 163px;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 46px;
+    line-height: 52px;
+
+    letter-spacing: 0.01em;
+    color: #000000;
+`
+
 function First() {
 
     return (
         <div>
-            <h1 className="h1step1">Vyberte si možnosť, ako chcete pomôcť </h1>
+            <H1>Vyberte si možnosť, ako chcete pomôcť</H1>
             <TwoButtons />
             <Dropdown />
             <DonateSum />
