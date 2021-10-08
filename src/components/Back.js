@@ -11,10 +11,6 @@ const BackButton = styled.button `
     cursor: pointer;
     width: 81px;
     height: 59px;
-    float:left;
-
-    position: relative;
-    color: white;
     background: #F3E2D9;
     border-radius: 100px;
 

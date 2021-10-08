@@ -4,6 +4,7 @@ import First from './pages/First';
 import Second from './pages/Second';
 import Third from './pages/Third';
 import Footer from './Footer';
+import NotFound from './NotFound';
 import { useSelector, useDispatch } from 'react-redux';
 import { increment, decrement } from './actions';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -29,6 +30,9 @@ function App() {
             </Route>
             <Route path="/confirm">
               <Third />
+            </Route>
+            <Route path="*">
+              <NotFound />
             </Route>
           </Switch>
           {/* <div>Counter = { counter }</div>

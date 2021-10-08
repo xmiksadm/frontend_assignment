@@ -24,7 +24,7 @@ const H1 = styled.div `
 function First() {
 
     return (
-        <div>
+        <div style={{marginBottom: '20%'}}>
             <H1>Vyberte si možnosť, ako chcete pomôcť</H1>
             <TwoButtons />
             <Dropdown />
@@ -34,4 +34,4 @@ function First() {
     )
 }
 
-export default First;
+export default First

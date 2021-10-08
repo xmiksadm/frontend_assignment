@@ -2,15 +2,14 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-const ContinueButton = styled.button `
+const SubmitButtonn = styled.button `
     display: flex;
     flex-direction: row;
     align-items: center;
     padding: 19px 23px;
-    margin-bottom: 20%;
     border: none;
     cursor: pointer;
-
+    
     position: absolute; 
     left : 50%;
     width: 124px;
@@ -35,13 +34,15 @@ const ContinueButton = styled.button `
     }
 `
 
-const Continue = (link) => {
+const SubmitButton = () => {
+
+    function handleSubmit() {
+        //Send state to the server code
+    }
         
     return (
-        <Link to={link.link} style={{ textDecoration: 'none' }}>
-            <ContinueButton>Pokračovať</ContinueButton>
-        </Link>
+        <SubmitButtonn onClick={handleSubmit}>Odoslať formulár</SubmitButtonn>
     )
 }
 
-export default Continue
+export default SubmitButton
