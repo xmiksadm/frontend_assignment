@@ -1,27 +1,12 @@
 import { useState } from 'react'
+import Slider from "../components/Slider"
+import Label from '../components/Label'
 import Back from '../components/Back'
 import Continue from '../components/Continue'
 import styled from 'styled-components'
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 import { useHistory } from 'react-router-dom'
-
-const H1 = styled.div `
-    margin-bottom: 5%;
-    max-width:100%;
-    width: 552px;
-    height: 104px;
-    left: 250px;
-    top: 163px;
-
-    font-style: normal;
-    font-weight: bold;
-    font-size: 46px;
-    line-height: 52px;
-
-    letter-spacing: 0.01em;
-    color: #000000;
-`
 
 const ButtonGroup = styled.div`
     display: flex;
@@ -53,11 +38,15 @@ const Phone = styled(PhoneInput) `
     align-items: none;
 
     &:--PhoneInputCountryFlag-height {
-
+        height: 2em;
     }
 
     .PhoneInputCountrySelect {
 	    position: absolute;
+    }
+
+    .PhoneInput {
+        align-items: stretch;
     }
 
 `
@@ -101,10 +90,9 @@ function Second() {
 
     return (
         <div>
-        <H1>
-            Potrebujeme od Vás zopár informácií
-        </H1>
 
+        <Slider active={2} />
+        <Label text={"Potrebujeme od Vás zopár informácií"}/>
             <form>
                 <Info>Meno</Info>
                 <Input 
@@ -146,10 +134,9 @@ function Second() {
                     value={phone}
                     onChange={setPhone}
                     placeholder="+421"
+                    style={{alignItems: 'stretch', borderRadius: '8px'}}
                 />
                 <br/>
-                
-                
 
                 <ButtonGroup>
                     <Back link={"/"}/>

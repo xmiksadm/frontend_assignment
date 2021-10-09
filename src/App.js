@@ -1,5 +1,4 @@
 import Navbar from "./Navbar";
-import Slider from "./components/Slider"
 import First from './pages/First';
 import Second from './pages/Second';
 import Third from './pages/Third';
@@ -19,7 +18,6 @@ function App() {
     <Router>
       <div>
         <Navbar />
-        <Slider />
         <div className="content">
           <Switch>
             <Route exact path="/">
