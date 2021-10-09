@@ -1,11 +1,12 @@
-import { useState, useRef, useEffect } from 'react';
 import Navbar from "./Navbar";
-import Slider from "./components/Slider"
-import Second from './pages/Second';
 import First from './pages/First';
+import Second from './pages/Second';
+import Third from './pages/Third';
 import Footer from './Footer';
+import NotFound from './NotFound';
 import { useSelector, useDispatch } from 'react-redux';
 import { increment, decrement } from './actions';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 
 function App() {
@@ -14,18 +15,31 @@ function App() {
   // const dispatch = useDispatch();
 
   return (
-    <div className="App">
-      <Navbar />
-      <div className="content">
-        <Slider />
-        <First />
-        {/* <Second /> */}
-        {/* <div>Counter = { counter }</div>
-        <button onClick={() => dispatch(increment(2))}>+</button>
-        <button onClick={() => dispatch(decrement())}>-</button> */}
+    <Router>
+      <div>
+        <Navbar />
+        <div className="content">
+          <Switch>
+            <Route exact path="/">
+              <First />
+            </Route>
+            <Route path="/form">
+              <Second />
+            </Route>
+            <Route path="/confirm">
+              <Third />
+            </Route>
+            <Route path="*">
+              <NotFound />
+            </Route>
+          </Switch>
+          {/* <div>Counter = { counter }</div>
+          <button onClick={() => dispatch(increment(2))}>+</button>
+          <button onClick={() => dispatch(decrement())}>-</button> */}
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </Router>
   );
 }
 

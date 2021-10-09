@@ -22,23 +22,36 @@ const OneSlider = styled.div `
         background: linear-gradient(94.75deg, rgba(0, 0, 0, 0.24) 0%, rgba(0, 0, 0, 0) 100.7%), #CD8B65;
         border-radius: 10px;
     `}
+
+    ${({ active }) => active && css`
+        opacity: 1;
+        width: 43.77px;
+        height: 6px;
+        background: linear-gradient(94.75deg, rgba(0, 0, 0, 0.24) 0%, rgba(0, 0, 0, 0) 100.7%), #CD8B65;
+        border-radius: 10px;
+    `}
 `
 
 const SliderGroup = styled.div `
+
+    max-width: 50%;
+    margin-top: 70px;
+    margin-right: auto;
+    margin-bottom: 25px;
     position: relative;
     display: flex;
     width: 80%;
-    margin-bottom: 3%;
 `
 
-const Slider = () => {
+const Slider = (props) => {
+
     return (
         <div>
-        <SliderGroup>
-            <OneSlider active></OneSlider>
-            <OneSlider></OneSlider>
-            <OneSlider></OneSlider>
-        </SliderGroup>
+            <SliderGroup >
+                <OneSlider active={props.active === 1 ? true : false} ></OneSlider>
+                <OneSlider active={props.active === 2 ? true : false} ></OneSlider>
+                <OneSlider active={props.active === 3 ? true : false} ></OneSlider>
+            </SliderGroup>
         </div>
     )
 }

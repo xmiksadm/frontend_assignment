@@ -41,18 +41,15 @@ const Link = styled.a `
 
 const Navbar = () => {
     return (
-        // <nav className="navbar">
-        //     <WebName>Nadácia Good Boy</WebName>
-        //     <div className="links">
-        //         <a href="https://www.facebook.com/GoodRequestCom" target="_blank" rel="noreferrer" className=""><Facebook /></a>
-        //         <a href="https://www.instagram.com/goodrequest/" target="_blank" rel="noreferrer" className=""><Instagram /></a>
-        //     </div>
-        // </nav>
         <Navigation>
             <WebName>Nadácia Good Boy</WebName>
             <Link>
-                 <a href="https://www.facebook.com/GoodRequestCom" target="_blank" rel="noreferrer"><Facebook /></a>
-                 <a href="https://www.instagram.com/goodrequest/" target="_blank" rel="noreferrer"><Instagram /></a>
+                 <a href="https://www.facebook.com/GoodRequestCom" target="_blank" rel="noreferrer" style={{marginRight: '20px'}}>
+                    <Facebook />
+                </a>
+                 <a href="https://www.instagram.com/goodrequest/" target="_blank" rel="noreferrer">
+                    <Instagram />
+                </a>
             </Link>
         </Navigation>
     )

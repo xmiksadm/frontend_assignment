@@ -5,6 +5,7 @@ import styled from 'styled-components'
 
 /* footer */
 const DivFooter = styled.div `
+    bottom:0;
     padding: 30px;
     display: flex;
     align-items: center;
