@@ -5,6 +5,8 @@ import styled from 'styled-components'
 import SubmitButton from '../components/SubmitButton'
 import Checkbox from '../components/Checkbox'
 import { useSelector, useDispatch } from 'react-redux';
+import { bindActionCreators } from "redux";
+import { actionCreators } from "../state/index"
 
 const Text = styled.div `
     font-weight: 800;
@@ -36,8 +38,19 @@ function Third() {
         donateType = "Chcem finančne prispieť celej nadácii"
     else if (type === "ONE")
         donateType = "Chcem finančne prispieť konkretnemu útulku"
+
     const money = useSelector((state) => state.money)
     const shelter = useSelector((state) => state.shelter)
+    const name = useSelector((state) => state.name)
+    const surname = useSelector((state) => state.surname)
+    const email = useSelector((state) => state.email)
+    const phone = useSelector((state) => state.phone)
+    const agree = useSelector((state) => state.agree)
+
+    const dispatch = useDispatch();
+    // action creators
+    const AC = bindActionCreators(actionCreators, dispatch)
+
     return (
         <div>
             <Slider active={3} />
@@ -50,14 +63,15 @@ function Third() {
             <Text>Suma ktorou chcem pomôcť</Text>
             <TextCheck>{money}</TextCheck>
             <Text>Meno a priezvisko</Text>
-            <TextCheck>asd</TextCheck>
+            <TextCheck>{name} {surname}</TextCheck>
             <Text>E-mailová adresa</Text>
-            <TextCheck>asd</TextCheck>
+            <TextCheck>{email}</TextCheck>
             <Text>Telefónne číslo</Text>
-            <TextCheck>asd</TextCheck>
+            <TextCheck>{phone}</TextCheck>
 
             <Checkbox />
             <ButtonGroup>
+                <div>{agree && <div>true</div>}</div>
                 <Back link={"/form"}/>
                 <SubmitButton />
             </ButtonGroup>

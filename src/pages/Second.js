@@ -7,6 +7,9 @@ import styled from 'styled-components'
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 import { useHistory } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux';
+import { bindActionCreators } from "redux";
+import { actionCreators } from "../state/index"
 
 const ButtonGroup = styled.div`
     display: flex;
@@ -62,16 +65,28 @@ function Second() {
     const [name, setName] = useState('');
     const [surname, setSurname] = useState('');
     const [email, setEmail] = useState('');
-    const [phone, setPhone] = useState();
-    const [checkbox, setCheckbox] = useState();
+    const [phone, setPhone] = useState(0);
+    const [checkbox, setCheckbox] = useState(false);
     const [isPending, setIsPending] = useState(false);
     const history = useHistory();
+
+    // DISPATCH -> Execute the action, dispatch this action to the reducer
+    const dispatch = useDispatch();
+    // action creators
+    const AC = bindActionCreators(actionCreators, dispatch)
+
+    AC.name(name)
+    AC.surname(surname)
+    AC.email(email)
+    AC.phone(phone)
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('Submit handled')
 
         const contribute = { name, surname, email, phone, checkbox }
+
 
         setIsPending(true)
 
@@ -95,6 +110,7 @@ function Second() {
         <Label text={"Potrebujeme od Vás zopár informácií"}/>
             <form>
                 <Info>Meno</Info>
+                    {/* onChange={(e) => setName(e.target.value)} */}
                 <Input 
                     type="text"
                     value={name}
@@ -132,7 +148,7 @@ function Second() {
                     defaultCountry="SK"
                     countries={["SK", "CZ"]}
                     value={phone}
-                    onChange={setPhone}
+                    onChange={(e) => setPhone(e.target.value)}
                     placeholder="+421"
                     style={{alignItems: 'stretch', borderRadius: '8px'}}
                 />

@@ -1,10 +1,10 @@
-const shelterReducer = (state = "", action) => {
+const surnameReducer = (state = "", action) => {
     switch(action.type) {
-        case "SHELTER":
+        case "SURNAME":
           return state = action.payload;
         default:
           return state;
     }
 }
 
-export default shelterReducer;
+export default surnameReducer;

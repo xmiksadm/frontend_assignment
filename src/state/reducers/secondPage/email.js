@@ -1,10 +1,10 @@
-const shelterReducer = (state = "", action) => {
+const emailReducer = (state = "", action) => {
     switch(action.type) {
-        case "SHELTER":
+        case "EMAIL":
           return state = action.payload;
         default:
           return state;
     }
 }
 
-export default shelterReducer;
+export default emailReducer;

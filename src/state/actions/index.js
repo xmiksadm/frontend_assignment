@@ -49,3 +49,47 @@ export const shelter = (name) => {
         })
     }
 }
+
+export const name = (name) => {
+    return (dispatch) => {
+        dispatch ({
+            type: 'NAME',
+            payload: name
+        })
+    }
+}
+
+export const surname = (surname) => {
+    return (dispatch) => {
+        dispatch ({
+            type: 'SURNAME',
+            payload: surname
+        })
+    }
+}
+
+export const email = (email) => {
+    return (dispatch) => {
+        dispatch ({
+            type: 'EMAIL',
+            payload: email
+        })
+    }
+}
+
+export const phone = (phoneNumber) => {
+    return (dispatch) => {
+        dispatch ({
+            type: 'PHONE',
+            payload: phoneNumber
+        })
+    }
+}
+
+export const agree = () => {
+    return (dispatch) => {
+        dispatch ({
+            type: 'AGREE',
+        })
+    }
+}

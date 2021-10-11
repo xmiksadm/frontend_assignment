@@ -1,5 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useSelector, useDispatch } from 'react-redux';
+import { bindActionCreators } from "redux";
+import { actionCreators } from "../state/index"
 
 const LabelContainer = styled.label `
     display: block;
@@ -76,9 +79,21 @@ const SpanCheckmark = styled.span `
 `
 
 const Checkbox = () => {
+
+    const agree = useSelector((state) => state.agree)
+
+    const dispatch = useDispatch();
+    // action creators
+    const AC = bindActionCreators(actionCreators, dispatch)
+
+    const checkB = (e) => {
+        console.log(agree)
+        AC.agree()
+    }
+
     return (
         <div>
-            <LabelContainer>
+            <LabelContainer onClick={checkB}>
                 <p>Súhlasím so spracovaním mojich osobných údajov</p>
                 <input required type="checkbox" />
                 <SpanCheckmark className="checkmark"></SpanCheckmark>
