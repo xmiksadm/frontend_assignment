@@ -1,4 +1,7 @@
 import styled from 'styled-components'
+import { useSelector, useDispatch } from 'react-redux';
+import { bindActionCreators } from "redux";
+import { actionCreators } from "../state/index"
 
 const Dropdown = styled.select `
     background: #FFFFFF;
@@ -24,14 +27,26 @@ const Dropdown = styled.select `
 `
 
 const ShelterList = ( {shelters} ) => {
+
+    // const type = useSelector((state) => state.donateType)
+    // const shelterName = useSelector((state) => state.shelter)
+    const dispatch = useDispatch();
+    // action creators
+    const AC = bindActionCreators(actionCreators, dispatch)
+
+    function chooseShelter(shelterName) {
+        // console.log(shelterName)
+        AC.shelter(shelterName)
+    }
+
     return (
         <div>
-            <Dropdown placeholder="">
-                <option value="none" selected disabled hidden>
+            <Dropdown placeholder="" defaultValue={'DEFAULT'} onChange={e => chooseShelter(e.target.value) }>
+                <option value="DEFAULT" disabled>
                     Vyberte útulok zo zoznamu
                 </option>
                 {shelters.map(shelter => (
-                        <option key={shelter.id}>{shelter.name}</option>
+                        <option key={shelter.id}  value={shelter.name}>{shelter.name}</option>
                 ))}
             </Dropdown>
         </div>

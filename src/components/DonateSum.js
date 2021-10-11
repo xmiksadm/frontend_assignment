@@ -1,5 +1,8 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
+import { useSelector, useDispatch } from 'react-redux';
+import { bindActionCreators } from "redux";
+import { actionCreators } from "../state/index"
 
 const Buttons = styled.table `
     width: 80%;
@@ -9,8 +12,8 @@ const Buttons = styled.table `
 
     display: flex;
     justify-content: space-around;
-
 `
+
 const Button = styled.button `
     width: 80%;
     margin: 5px;
@@ -32,6 +35,11 @@ const Button = styled.button `
         color: white;
         background: linear-gradient(115.41deg, #CD8A64 -1.77%, #C4794F 73.03%);
     }
+
+    &.selected {
+        color: white;
+        background: linear-gradient(115.41deg, #CD8A64 -1.77%, #C4794F 73.03%);
+    }
 `
 
 const Input = styled.input `
@@ -49,40 +57,29 @@ const Input = styled.input `
 
 const DonateSum = () => {
 
-    const [sum, setSum] = useState(0);
-    const [simpleButtonState, toggleSimpleButtonState] = useState(false);
-    const handleSimpleButtonClick = () => toggleSimpleButtonState(!simpleButtonState)
-    
-    function setColor(e) {
-        var target = e.target,
-            count = +target.dataset.count;
-      
-        target.style.background = count === 1 ? "#linear-gradient(115.41deg, #CD8A64 -1.77%, #C4794F 73.03%)" : '#FFFFFF';
-        target.dataset.count = count === 1 ? 0 : 1;
-    }
-    function donate(sum) {
-        // alert('Hello!'); 
-        // handleSimpleButtonClick();
-        setSum(sum);
-        console.log(sum);
-    }
+    const [selectedButton, setSelectedButton]  = useState(null);
 
-    const handleInput = event => {
-        setSum(event);
-    };
+    const money = useSelector((state) => state.money)
+    // DISPATCH -> Execute the action, dispatch this action to the reducer
+    const dispatch = useDispatch();
+
+  // action creators
+    const AC = bindActionCreators(actionCreators, dispatch)
+    
+    function donate(key) {
+        AC.money(key)
+        setSelectedButton(key);
+    }
 
     return (
         <div>
-            <h3>Suma, ktorou chcem prispieť</h3>
+            <h3>Suma, ktorou chcem prispieť: {money}</h3>
 
-            <Buttons>
-                <Button onClick={() => donate(5)}>5 €</Button>
-                <Button onClick={() => donate(10)}>10 €</Button>
-                <Button onClick={() => donate(20)}>20 €</Button>
-                <Button onClick={() => donate(30)}>30 €</Button>
-                <Button onClick={() => donate(50)}>50 €</Button>
-                <Button onClick={() => donate(100)}>100 €</Button>
-                <Input onInput={e => handleInput(e.target.value)} type="number" placeholder=" _ €"></Input>
+            <Buttons> 
+                {[5, 10, 20, 30, 50, 100].map(key => 
+                    <Button className={key === selectedButton ? 'selected' : ''} type="button" key={key} onClick={() => donate(key)}>{key} €</Button>
+                )}
+                <Input onInput={e => AC.money(e.target.value)} type="number" placeholder=" _ €"></Input>
             </Buttons>
         </div>
     )
