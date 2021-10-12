@@ -38,7 +38,9 @@ const ContinueButton = styled.button `
 const Continue = (link) => {
         
     return (
-        <Link to={link.link} style={{ textDecoration: 'none' }}>
+        <Link to={link.link} style={{ textDecoration: 'none' }} > 
+        {/* onClick={() => disabled ? return : this.DoSomething()}
+        disabled={disabled} */}
             <ContinueButton>Pokračovať</ContinueButton>
         </Link>
     )

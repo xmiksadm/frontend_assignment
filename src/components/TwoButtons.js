@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import styled, { css } from 'styled-components'
 import AccountBalanceWalletOutlinedIcon from '@mui/icons-material/AccountBalanceWalletOutlined';
 import PetsOutlinedIcon from '@mui/icons-material/PetsOutlined';
+import { useDispatch } from 'react-redux';
+import { bindActionCreators } from "redux";
+import { actionCreators } from "../state/index"
 
 const Pet = styled(PetsOutlinedIcon) `
     filter: invert(100%);
@@ -86,27 +89,32 @@ const TwoButtons = () => {
 
     const [activeLeft, setActiveLeft] = useState(false);
     const [activeRight, setActiveRight] = useState(true);
-    const [showDropdown, setShowDropdown] = useState(false);
+
+    // DISPATCH -> Execute the action, dispatch this action to the reducer
+    const dispatch = useDispatch();
+    // action creators
+    const AC = bindActionCreators(actionCreators, dispatch)
 
     const handleButtonLeft = (e) => {
         if (activeRight){
             setActiveRight(false);
         }
-        setShowDropdown(true);
+        AC.typeOne()
         setActiveLeft(!activeLeft);
     }
     const handleButtonRight = (e) => {
         if (activeLeft){
             setActiveLeft(false);
         }
-        setShowDropdown(false);
+        AC.typeAll()
+        AC.shelter('')
         setActiveRight(!activeRight);
     }
 
     return (
         <div>
             <ButtonGroup>
-                <Button left active={activeLeft} onClick={handleButtonLeft}>
+                <Button left active={activeLeft} onClick={handleButtonLeft} >
                     <Wallet />Chcem finančne prispieť konkrétnemu útulku
                 </Button>
                 <Button right active={activeRight} onClick={handleButtonRight}>

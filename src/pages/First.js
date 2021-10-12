@@ -7,14 +7,18 @@ import DonateSum from "../components/DonateSum";
 
 function First() {
 
+    function check() {
+        console.log('Check')
+    }
+
     return (
         <div style={{marginBottom: '20%'}}>
             <Slider active={1} />
             <Label text={"Vyberte si možnosť, ako chcete pomôcť"} />
-            <TwoButtons />
-            <Dropdown style={{visibility: 'hidden'}}/>
+            <TwoButtons/>
+            <Dropdown />
             <DonateSum />
-            <Continue link={"/form"} />
+            <Continue link={"/form"} onClick={check}/>
         </div>
     )
 }

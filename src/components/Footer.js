@@ -1,4 +1,4 @@
-import img from "./css/logo.png";
+import img from "../css/logo.png";
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import styled from 'styled-components'
@@ -68,11 +68,11 @@ const Footer = () => {
             </Column23>
             <Column4>
             <ul>
-                    <h4>Nadácia Good Boy</h4><br/>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br/>
-                    <a href="https://www.facebook.com/GoodRequestCom" target="_blank" rel="noreferrer" className=""><FacebookIcon /></a>
-                    <a href="https://www.instagram.com/goodrequest/" target="_blank" rel="noreferrer" className=""><InstagramIcon /></a>
-                </ul>
+                <h4>Nadácia Good Boy</h4><br/>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br/>
+                <a href="https://www.facebook.com/GoodRequestCom" target="_blank" rel="noreferrer" className=""><FacebookIcon /></a>
+                <a href="https://www.instagram.com/goodrequest/" target="_blank" rel="noreferrer" className=""><InstagramIcon /></a>
+            </ul>
             </Column4>
         </DivFooter>
     )
