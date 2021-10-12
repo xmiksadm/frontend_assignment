@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { useHistory } from 'react-router-dom'
+import { useSelector } from 'react-redux';
 
 const SubmitButtonn = styled.button `
     display: flex;
@@ -36,9 +38,47 @@ const SubmitButtonn = styled.button `
 
 const SubmitButton = () => {
 
-    function handleSubmit() {
-        //Send state to the server code
-    }
+    const type = useSelector((state) => state.donateType)
+    let donateType = ""
+    if (type === "ALL")
+        donateType = "Chcem finančne prispieť celej nadácii"
+    else if (type === "ONE")
+        donateType = "Chcem finančne prispieť konkretnemu útulku"
+    const history = useHistory();
+    const value = useSelector((state) => state.money)
+    const shelterID = useSelector((state) => state.shelter)
+    const firstName = useSelector((state) => state.name)
+    const lastName = useSelector((state) => state.surname)
+    const email = useSelector((state) => state.email)
+    const phone = useSelector((state) => state.phone)
+    const agree = useSelector((state) => state.agree)
+
+    const id = 1;
+    const intValue = parseInt(value)
+    
+    
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log('Submit handled')
+
+        // const contribute = { value, donateType, shelterID, firstName, lastName, email, phone, agree }
+        const contribute = { firstName, lastName, email, phone, intValue, id }
+
+
+        // setIsPending(true)
+
+        fetch('https://frontend-assignment-api.goodrequest.com/api/v1/shelters/contribute', {
+            method: 'POST',
+            headers: { "Content-Type": "application/json"},
+            body: JSON.stringify(contribute)
+        }).then(() => {
+            console.log("Contributed")
+            // setIsPending(false)
+            history.push('/')
+        })
+
+        console.log(contribute)
+    } 
         
     return (
         <SubmitButtonn onClick={handleSubmit}>Odoslať formulár</SubmitButtonn>

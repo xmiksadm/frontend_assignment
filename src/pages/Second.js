@@ -4,8 +4,10 @@ import Label from '../components/Label'
 import Back from '../components/Back'
 import Continue from '../components/Continue'
 import styled from 'styled-components'
-import 'react-phone-number-input/style.css'
-import PhoneInput from 'react-phone-number-input'
+
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/style.css'
+
 import { useHistory } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux';
 import { bindActionCreators } from "redux";
@@ -27,33 +29,11 @@ const Input = styled.input `
     width: 557px;
     height: 74px;
 
-    &:click {
+    &:focus {
+        outline: none;
         border: 1px solid #CD8B65;
     }
 `
-const Phone = styled(PhoneInput) `
-    width: 557px;
-    height: 80px;
-    background: #FFFFFF;
-    border: 1px solid #DFDFDF;
-    box-sizing: border-box;
-    border-radius: 8px;
-    align-items: none;
-
-    &:--PhoneInputCountryFlag-height {
-        height: 2em;
-    }
-
-    .PhoneInputCountrySelect {
-	    position: absolute;
-    }
-
-    .PhoneInput {
-        align-items: stretch;
-    }
-
-`
-
 const Info = styled.div `
     font-weight: 800;
     font-size: 16px;
@@ -65,7 +45,7 @@ function Second() {
     const [name, setName] = useState('');
     const [surname, setSurname] = useState('');
     const [email, setEmail] = useState('');
-    const [phone, setPhone] = useState(0);
+    const [phone, setPhone] = useState('');
     const [checkbox, setCheckbox] = useState(false);
     const [isPending, setIsPending] = useState(false);
     const history = useHistory();
@@ -80,27 +60,8 @@ function Second() {
     AC.email(email)
     AC.phone(phone)
 
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log('Submit handled')
-
-        const contribute = { name, surname, email, phone, checkbox }
-
-
-        setIsPending(true)
-
-        fetch('https://frontend-assignment-api.goodrequest.com/api/v1/shelters/contribute', {
-            method: 'POST',
-            headers: { "Content-Type": "application/json"},
-            body: JSON.stringify(contribute)
-        }).then(() => {
-            console.log("Contributed")
-            setIsPending(false)
-            history.push('/')
-        })
-
-        console.log(contribute)
+    function handlePhoneChange(phone) {
+        setPhone(phone)
     }
 
     return (
@@ -141,22 +102,42 @@ function Second() {
                 />
                 <br/>
                 <Info>Telefónne číslo</Info>
-                <Phone
-                    addInternationalOption={false}
-                    enableAreaCodes={true}
-                    containerStyle={{ background: 'black' }}
-                    defaultCountry="SK"
-                    countries={["SK", "CZ"]}
+                <PhoneInput
+                    country={'sk'}
+                    onlyCountries={['sk', 'cz']}
                     value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    placeholder="+421"
-                    style={{alignItems: 'stretch', borderRadius: '8px'}}
+                    masks={{sk: '(...) ... ...', cz: '(...) ... ...'}}
+                    onChange={handlePhoneChange}
+                    inputProps={{
+                        name: 'phone',
+                        required: true,
+                        autoFocus: true
+                    }}
+                    buttonStyle={{border: 'none', 
+                        height: '60px', 
+                        marginTop: '6px', 
+                        marginLeft: '3px', 
+                        backgroundColor: 'white'
+                    }}
+                    inputStyle={{width: '557px',
+                        height: '74px',
+                        background: '#FFFFFF',
+                        border: '1px solid #DFDFDF',
+                        boxSizing: 'border-box',
+                        borderRadius: '8px',
+                        alignItems: 'none',
+                        '&:focus': {
+                            outline: 'none',
+                            border: '5px solid #CD8B65'
+                        },
+                    }}
                 />
+
                 <br/>
 
                 <ButtonGroup>
                     <Back link={"/"}/>
-                    { !isPending && <Continue onClick={handleSubmit} link={"/confirm"}/> }
+                    { !isPending && <Continue link={"/confirm"}/> }
                     { isPending && <button disabled>Contributing...</button> }
                 </ButtonGroup>
             </form>

@@ -86,14 +86,9 @@ const Checkbox = () => {
     // action creators
     const AC = bindActionCreators(actionCreators, dispatch)
 
-    const checkB = (e) => {
-        console.log(agree)
-        AC.agree()
-    }
-
     return (
         <div>
-            <LabelContainer onClick={checkB}>
+            <LabelContainer onChange={event => AC.agree()} >
                 <p>Súhlasím so spracovaním mojich osobných údajov</p>
                 <input required type="checkbox" />
                 <SpanCheckmark className="checkmark"></SpanCheckmark>

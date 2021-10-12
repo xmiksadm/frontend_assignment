@@ -7,6 +7,7 @@ import Checkbox from '../components/Checkbox'
 import { useSelector, useDispatch } from 'react-redux';
 import { bindActionCreators } from "redux";
 import { actionCreators } from "../state/index"
+import { useHistory } from 'react-router-dom'
 
 const Text = styled.div `
     font-weight: 800;
@@ -32,13 +33,15 @@ const ButtonGroup = styled.div`
 
 function Third() {
 
+    // const [isPending, setIsPending] = useState(false);
+
     const type = useSelector((state) => state.donateType)
     let donateType = ""
     if (type === "ALL")
         donateType = "Chcem finančne prispieť celej nadácii"
     else if (type === "ONE")
         donateType = "Chcem finančne prispieť konkretnemu útulku"
-
+    
     const money = useSelector((state) => state.money)
     const shelter = useSelector((state) => state.shelter)
     const name = useSelector((state) => state.name)
@@ -58,8 +61,16 @@ function Third() {
 
             <Text>Akou formou chcem pomôcť</Text>
             <TextCheck>{donateType}</TextCheck>
-            <Text>Najviac mi záleží na útulku</Text>
-            <TextCheck>{shelter}</TextCheck>
+            {
+                shelter === '' 
+                ?
+                <div></div>
+                :
+                <div>
+                    <Text>Najviac mi záleží na útulku</Text>
+                    <TextCheck>{shelter}</TextCheck>
+                </div>
+            }
             <Text>Suma ktorou chcem pomôcť</Text>
             <TextCheck>{money}</TextCheck>
             <Text>Meno a priezvisko</Text>
@@ -71,7 +82,6 @@ function Third() {
 
             <Checkbox />
             <ButtonGroup>
-                <div>{agree && <div>true</div>}</div>
                 <Back link={"/form"}/>
                 <SubmitButton />
             </ButtonGroup>
