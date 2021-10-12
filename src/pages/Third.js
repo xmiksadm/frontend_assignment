@@ -43,7 +43,7 @@ function Third() {
         donateType = "Chcem finančne prispieť konkretnemu útulku"
     
     const money = useSelector((state) => state.money)
-    const shelter = useSelector((state) => state.shelter)
+    const shelterName = useSelector((state) => state.shelter)
     const name = useSelector((state) => state.name)
     const surname = useSelector((state) => state.surname)
     const email = useSelector((state) => state.email)
@@ -62,13 +62,13 @@ function Third() {
             <Text>Akou formou chcem pomôcť</Text>
             <TextCheck>{donateType}</TextCheck>
             {
-                shelter === '' 
+                shelterName === null 
                 ?
                 <div></div>
                 :
                 <div>
                     <Text>Najviac mi záleží na útulku</Text>
-                    <TextCheck>{shelter}</TextCheck>
+                    <TextCheck>{shelterName.name}</TextCheck>
                 </div>
             }
             <Text>Suma ktorou chcem pomôcť</Text>

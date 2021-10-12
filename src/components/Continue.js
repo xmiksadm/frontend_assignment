@@ -36,12 +36,20 @@ const ContinueButton = styled.button `
 `
 
 const Continue = (link) => {
+
+    function handle(e, link) {
+        console.log(e)
+        if (link === '/form') {
+            // e.preventDefault();
+            console.log(link)
+        } else if (link === '/confirm') {
+            console.log(link)
+        }
+    }
         
     return (
         <Link to={link.link} style={{ textDecoration: 'none' }} > 
-        {/* onClick={() => disabled ? return : this.DoSomething()}
-        disabled={disabled} */}
-            <ContinueButton>Pokračovať</ContinueButton>
+            <ContinueButton type='button' onClick={(e) => { handle(e, link.link) }}>Pokračovať</ContinueButton>
         </Link>
     )
 }

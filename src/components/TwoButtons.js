@@ -107,7 +107,7 @@ const TwoButtons = () => {
             setActiveLeft(false);
         }
         AC.typeAll()
-        AC.shelter('')
+        AC.shelter(null)
         setActiveRight(!activeRight);
     }
 

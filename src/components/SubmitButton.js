@@ -42,7 +42,7 @@ const SubmitButton = () => {
 
     const history = useHistory();
     const value = useSelector((state) => state.money)
-    const shelterID = useSelector((state) => state.shelter)
+    const shelterID = useSelector((state) => state.shelter.id)
     const firstName = useSelector((state) => state.name)
     const lastName = useSelector((state) => state.surname)
     const email = useSelector((state) => state.email)

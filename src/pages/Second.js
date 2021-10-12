@@ -46,6 +46,11 @@ function Second() {
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
 
+    // const name = useSelector((state) => state.name)
+    // const lastName = useSelector((state) => state.surname)
+    // const email = useSelector((state) => state.email)
+    // const phone = useSelector((state) => state.phone)
+
     // DISPATCH -> Execute the action, dispatch this action to the reducer
     const dispatch = useDispatch();
     // action creators
@@ -67,7 +72,6 @@ function Second() {
         <Label text={"Potrebujeme od Vás zopár informácií"}/>
             <form>
                 <Info>Meno</Info>
-                    {/* onChange={(e) => setName(e.target.value)} */}
                 <Input 
                     type="text"
                     value={name}

@@ -32,8 +32,10 @@ const ShelterList = ( {shelters} ) => {
     // action creators
     const AC = bindActionCreators(actionCreators, dispatch)
 
-    function chooseShelter(shelterId) {
-        AC.shelter(shelterId)
+    function chooseShelter(shelterObj) {
+        let obj = JSON.parse(shelterObj);
+        console.log(obj.id)
+        AC.shelter(obj)
     }
 
     return (
@@ -43,7 +45,7 @@ const ShelterList = ( {shelters} ) => {
                     Vyberte útulok zo zoznamu
                 </option>
                 {shelters.map(shelter => (
-                        <option key={shelter.id}  value={shelter.id}>{shelter.name}</option>
+                        <option key={shelter.id} value={JSON.stringify(shelter)}>{shelter.name}</option>
                 ))}
             </Dropdown>
         </div>
