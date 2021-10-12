@@ -1,8 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { useHistory } from 'react-router-dom'
 import { useSelector } from 'react-redux';
+import { useState } from 'react'
 
 const SubmitButtonn = styled.button `
     display: flex;
@@ -38,12 +38,8 @@ const SubmitButtonn = styled.button `
 
 const SubmitButton = () => {
 
-    const type = useSelector((state) => state.donateType)
-    let donateType = ""
-    if (type === "ALL")
-        donateType = "Chcem finančne prispieť celej nadácii"
-    else if (type === "ONE")
-        donateType = "Chcem finančne prispieť konkretnemu útulku"
+    const [isPending, setIsPending] = useState(false);
+
     const history = useHistory();
     const value = useSelector((state) => state.money)
     const shelterID = useSelector((state) => state.shelter)
@@ -51,37 +47,46 @@ const SubmitButton = () => {
     const lastName = useSelector((state) => state.surname)
     const email = useSelector((state) => state.email)
     const phone = useSelector((state) => state.phone)
-    const agree = useSelector((state) => state.agree)
+    // const agree = useSelector((state) => state.agree)
 
-    const id = 1;
-    const intValue = parseInt(value)
-    
-    
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('Submit handled')
 
-        // const contribute = { value, donateType, shelterID, firstName, lastName, email, phone, agree }
-        const contribute = { firstName, lastName, email, phone, intValue, id }
+        const contribute = { firstName, lastName, email, phone, value, shelterID }
 
-
-        // setIsPending(true)
-
-        fetch('https://frontend-assignment-api.goodrequest.com/api/v1/shelters/contribute', {
-            method: 'POST',
-            headers: { "Content-Type": "application/json"},
+        setIsPending(true)
+        const options = { 
+            method: 'post',
+            headers: {
+              'Accept': 'application/json, text/plain, */*',
+              'Content-Type': 'application/json'
+            },
             body: JSON.stringify(contribute)
-        }).then(() => {
-            console.log("Contributed")
-            // setIsPending(false)
-            history.push('/')
+        }
+
+        fetch('https://frontend-assignment-api.goodrequest.com/api/v1/shelters/contribute', options)
+        .then(response => {
+            if (response.ok) {
+                console.log("Contributed")
+                setIsPending(false)
+                history.push('/')
+                return response.json();
+            } else {
+                throw new Error('Something went wrong ...');
+            }
         })
+        .then(data => console.log(data))
+        .catch(error => console.log(error));
 
         console.log(contribute)
-    } 
-        
+    }
+
     return (
-        <SubmitButtonn onClick={handleSubmit}>Odoslať formulár</SubmitButtonn>
+        <div>
+            { !isPending && <SubmitButtonn onClick={handleSubmit}>Odoslať formulár</SubmitButtonn> }
+            { isPending && <SubmitButtonn disabled>Odosielam...</SubmitButtonn> }
+        </div>
     )
 }
 

@@ -8,7 +8,6 @@ import styled from 'styled-components'
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 
-import { useHistory } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux';
 import { bindActionCreators } from "redux";
 import { actionCreators } from "../state/index"
@@ -46,9 +45,6 @@ function Second() {
     const [surname, setSurname] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
-    const [checkbox, setCheckbox] = useState(false);
-    const [isPending, setIsPending] = useState(false);
-    const history = useHistory();
 
     // DISPATCH -> Execute the action, dispatch this action to the reducer
     const dispatch = useDispatch();
@@ -137,8 +133,7 @@ function Second() {
 
                 <ButtonGroup>
                     <Back link={"/"}/>
-                    { !isPending && <Continue link={"/confirm"}/> }
-                    { isPending && <button disabled>Contributing...</button> }
+                    <Continue link={"/confirm"}/>
                 </ButtonGroup>
             </form>
         </div>

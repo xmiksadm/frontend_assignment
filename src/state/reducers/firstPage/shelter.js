@@ -1,4 +1,4 @@
-const shelterReducer = (state = "", action) => {
+const shelterReducer = (state = 0, action) => {
     switch(action.type) {
         case "SHELTER":
           return state = action.payload;

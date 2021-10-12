@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import useFetch from '../useFetch'
+import useFetchGet from '../useFetchGet'
 import ShelterList from "./ShelterList"
 import { useSelector } from 'react-redux';
 
@@ -10,7 +10,7 @@ const ShelterForm = styled.form `
 
 const Dropdown = () => {
 
-    const { data, isPending, error} = useFetch('https://frontend-assignment-api.goodrequest.com/api/v1/shelters')
+    const { data, isPending, error} = useFetchGet('https://frontend-assignment-api.goodrequest.com/api/v1/shelters')
 
     const type = useSelector((state) => state.donateType)
 

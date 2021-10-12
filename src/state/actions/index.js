@@ -41,11 +41,11 @@ export const money = (sum) => {
     }
 }
 
-export const shelter = (name) => {
+export const shelter = (shelterId) => {
     return (dispatch) => {
         dispatch ({
             type: 'SHELTER',
-            payload: name
+            payload: shelterId
         })
     }
 }
