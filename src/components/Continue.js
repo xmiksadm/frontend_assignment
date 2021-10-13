@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { useHistory } from 'react-router-dom'
 
 const ContinueButton = styled.button `
     display: flex;
@@ -37,20 +38,25 @@ const ContinueButton = styled.button `
 
 const Continue = (link) => {
 
+    const history = useHistory();
+
     function handle(e, link) {
         console.log(e)
         if (link === '/form') {
             // e.preventDefault();
+            history.push(link);
             console.log(link)
         } else if (link === '/confirm') {
+            // e.preventDefault();
+            // history.push(link);
             console.log(link)
         }
     }
         
     return (
-        <Link to={link.link} style={{ textDecoration: 'none' }} > 
-            <ContinueButton type='button' onClick={(e) => { handle(e, link.link) }}>Pokračovať</ContinueButton>
-        </Link>
+        // <Link to={link.link} style={{ textDecoration: 'none' }} > 
+            <ContinueButton onClick={(e) => { handle(e, link.link) }}>Pokračovať</ContinueButton>
+        // </Link>
     )
 }
 

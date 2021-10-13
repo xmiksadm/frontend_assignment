@@ -7,7 +7,6 @@ import Checkbox from '../components/Checkbox'
 import { useSelector, useDispatch } from 'react-redux';
 import { bindActionCreators } from "redux";
 import { actionCreators } from "../state/index"
-import { useHistory } from 'react-router-dom'
 
 const Text = styled.div `
     font-weight: 800;
@@ -28,7 +27,7 @@ const ButtonGroup = styled.div`
     display: flex;
     width: 80%;
     margin-top: 10%;
-    margin-bottom: 20%;
+    margin-bottom: 5%;
 `
 
 function Third() {
@@ -54,6 +53,13 @@ function Third() {
     // action creators
     const AC = bindActionCreators(actionCreators, dispatch)
 
+    function checkAll() {
+        if (money > 0 && name !== "" && surname !== "" && email !== "" && phone.length > 9) 
+            return true
+        else 
+            return false
+    }
+
     return (
         <div>
             <Slider active={3} />
@@ -62,7 +68,7 @@ function Third() {
             <Text>Akou formou chcem pomôcť</Text>
             <TextCheck>{donateType}</TextCheck>
             {
-                shelterName === null 
+                !shelterName 
                 ?
                 <div></div>
                 :
@@ -78,12 +84,12 @@ function Third() {
             <Text>E-mailová adresa</Text>
             <TextCheck>{email}</TextCheck>
             <Text>Telefónne číslo</Text>
-            <TextCheck>{phone}</TextCheck>
+            <TextCheck>+{phone}</TextCheck>
 
             <Checkbox />
             <ButtonGroup>
                 <Back link={"/form"}/>
-                <SubmitButton />
+                {checkAll() && agree && <SubmitButton />}
             </ButtonGroup>
         </div>
     )

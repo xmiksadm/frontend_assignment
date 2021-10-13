@@ -7,14 +7,16 @@
     color: #333;
 }
 body {
-    background-image: url("./kuco.png");
-    background-size: 14%;
+    background-image: url("./kucoMask.png");
+    background-size: 360px 730px;
     background-repeat: no-repeat;
-    background-position: center right 20%;
+    background-position: right 10% top 150px;
+    width: 100%;
 }
 
 .content {
     max-width: 50%;
     margin: 10px auto;
     padding: 20px;
+    padding-bottom: 50px;
 }

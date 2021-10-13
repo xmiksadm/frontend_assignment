@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useHistory } from 'react-router-dom'
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { bindActionCreators } from "redux";
+import { actionCreators } from "../state/index"
 import { useState } from 'react'
 
 const SubmitButtonn = styled.button `
@@ -43,15 +45,23 @@ const SubmitButton = () => {
     const history = useHistory();
     const value = useSelector((state) => state.money)
     const shelterID = useSelector((state) => state.shelter.id)
+    if (shelterID === null)
+        shelterID = 0
+
     const firstName = useSelector((state) => state.name)
     const lastName = useSelector((state) => state.surname)
     const email = useSelector((state) => state.email)
     const phone = useSelector((state) => state.phone)
-    // const agree = useSelector((state) => state.agree)
+    const agree = useSelector((state) => state.agree)
+
+    const dispatch = useDispatch();
+    // action creators
+    const AC = bindActionCreators(actionCreators, dispatch)
 
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('Submit handled')
+        AC.agree(false)
 
         const contribute = { firstName, lastName, email, phone, value, shelterID }
 
