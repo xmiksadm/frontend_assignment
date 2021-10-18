@@ -40,10 +40,6 @@ function App() {
               <NotFound />
             </Route>
           </Switch>
-          {/* <div>Counter = { count }</div>
-          <div>Type = { type }</div>
-          <button onClick={() => increment(2)}>+</button>
-          <button onClick={() => decrement()}>-</button> */}
         </div>
         <Footer />
       </div>

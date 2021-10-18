@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { useDispatch } from 'react-redux';
 import { bindActionCreators } from "redux";
 import { actionCreators } from "../state/index"
+import { useTranslation } from "react-i18next";
 
 const LabelContainer = styled.label `
     display: block;
@@ -80,6 +81,8 @@ const SpanCheckmark = styled.span `
 
 const Checkbox = () => {
 
+    const { t } = useTranslation()
+
     const dispatch = useDispatch();
     // action creators
     const AC = bindActionCreators(actionCreators, dispatch)
@@ -87,7 +90,7 @@ const Checkbox = () => {
     return (
         <div>
             <LabelContainer onChange={() => AC.agree()} >
-                <p>Súhlasím so spracovaním mojich osobných údajov</p>
+                <p>{t("checkbox")}</p>
                 <input required type="checkbox" />
                 <SpanCheckmark className="checkmark"></SpanCheckmark>
             </LabelContainer>

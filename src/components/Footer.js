@@ -2,6 +2,7 @@ import img from "../css/logo.png";
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import styled from 'styled-components'
+import { useTranslation } from "react-i18next";
 
 /* footer */
 const DivFooter = styled.div `
@@ -49,6 +50,9 @@ const Column4 = styled.div `
 `
 
 const Footer = () => {
+
+    const { t } = useTranslation()
+
     return (
         <DivFooter>
             <Column1>
@@ -56,19 +60,19 @@ const Footer = () => {
             </Column1>
             <Column23>
                 <ul><br/>
-                    <h4>Nadácia Good Boy</h4><br/>
-                    <a href="/about">O projekte</a><br/>
-                    <a href="/instructions">Ako na to</a><br/>
-                    <a href="/contact">Kontakt</a><br/><br/><br/>
+                    <h4>{t("foundationName")}</h4><br/>
+                    <a href="/about">{t("footer.about")}</a><br/>
+                    <a href="/instructions">{t("footer.instructions")}</a><br/>
+                    <a href="/contact">{t("footer.contact")}</a><br/><br/><br/>
                 </ul>
             </Column23>
             <Column23>
-                <h4>Nadácia Good Boy</h4><br/>
+                <h4>{t("foundationName")}</h4><br/>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in interdum ipsum, sit amet.
             </Column23>
             <Column4>
             <ul>
-                <h4>Nadácia Good Boy</h4><br/>
+                <h4>{t("foundationName")}</h4><br/>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br/>
                 <a href="https://www.facebook.com/GoodRequestCom" target="_blank" rel="noreferrer" className=""><FacebookIcon /></a>
                 <a href="https://www.instagram.com/goodrequest/" target="_blank" rel="noreferrer" className=""><InstagramIcon /></a>

@@ -1,10 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useHistory } from 'react-router-dom'
-import { useSelector, useDispatch } from 'react-redux';
-import { bindActionCreators } from "redux";
+import { useSelector, useDispatch } from 'react-redux'
+import { bindActionCreators } from "redux"
 import { actionCreators } from "../state/index"
 import { useState } from 'react'
+import { useTranslation } from "react-i18next"
 
 const SubmitButtonn = styled.button `
     display: flex;
@@ -40,19 +41,18 @@ const SubmitButtonn = styled.button `
 
 const SubmitButton = () => {
 
+    const { t } = useTranslation()
+
     const [isPending, setIsPending] = useState(false);
 
     const history = useHistory();
     const value = useSelector((state) => state.money)
     const shelterID = useSelector((state) => state.shelter.id)
-    if (shelterID === null)
-        shelterID = 0
 
     const firstName = useSelector((state) => state.name)
     const lastName = useSelector((state) => state.surname)
     const email = useSelector((state) => state.email)
     const phone = useSelector((state) => state.phone)
-    const agree = useSelector((state) => state.agree)
 
     const dispatch = useDispatch();
     // action creators
@@ -94,8 +94,8 @@ const SubmitButton = () => {
 
     return (
         <div>
-            { !isPending && <SubmitButtonn onClick={handleSubmit}>Odoslať formulár</SubmitButtonn> }
-            { isPending && <SubmitButtonn disabled>Odosielam...</SubmitButtonn> }
+            { !isPending && <SubmitButtonn onClick={handleSubmit}>{t("submitButton")}</SubmitButtonn> }
+            { isPending && <SubmitButtonn disabled>{t("sending")}</SubmitButtonn> }
         </div>
     )
 }

@@ -5,8 +5,11 @@ import Dropdown from "../components/Dropdown";
 import Continue from "../components/Continue";
 import DonateSum from "../components/DonateSum";
 import { useSelector } from 'react-redux';
+import { useTranslation } from "react-i18next";
 
 function First() {
+
+    const { t } = useTranslation()
     
     const donateType = useSelector((state) => state.donateType)
     const money = useSelector((state) => state.money)
@@ -26,7 +29,7 @@ function First() {
     return (
         <div style={{marginBottom: '20%'}}>
             <Slider active={1} />
-            <Label text={"Vyberte si možnosť, ako chcete pomôcť"} />
+            <Label text={t("label.first")} />
             <TwoButtons/>
             <Dropdown />
             <DonateSum />

@@ -1,0 +1,49 @@
+{
+    "foundationName": "Foundation Good Boy",
+    "label": {
+        "first": "Choose how you want to help",
+        "second": "We need some information from you",
+        "third": "Check the entered data"
+    },
+    "buttonOne": "I want to contribute financially to a specific shelter",
+    "buttonTwo": "I want to contribute financially to the whole foundation",
+    "shelter": "Shelter",
+    "chooseShelter": "Select a shelter from the list",
+    "sum": "The amount I want to contribute",
+    "form": {
+        "firstName": "First Name",
+        "placeholderFirstName": "Enter your first name",
+        "lastName": "Last Name",
+        "placeholderLastName": "Enter your last name",
+        "email": "E-mail adress",
+        "placeholderEmail": "Enter your e-mail",
+        "phone": "Phone number",
+        "placeholderPhone": "Enter your phone number",
+        "required": "*Required field",
+        "greaterThanTwo": "Must be greater than 2 characters",
+        "lessThanTwenty": "Must be less than 20 characters",
+        "lessThanThirty": "Must be less than 30 characters",
+        "wrongEmail": "Incorrect email address format"
+    },
+    "thirdPage": {
+        "donateType": "What form do I want to help",
+        "donateTypeAll": "I want to contribute financially to the whole foundation",
+        "donateTypeOne": "I want to contribute financially to a specific shelter",
+        "oneShelter": "I care most about the shelter",
+        "sum": "The amount I want to help",
+        "name": "First name and last name",
+        "email": "E-mail address",
+        "phone": "Phone number"
+    },
+    "continue": "Continue",
+    "back": "Back",
+    "checkbox": "I agree to the processing of my personal data",
+    "submitButton": "Submit form",
+    "sending": "Sending...",
+    "footer": {
+        "about": "About project",
+        "instructions": "Instructions",
+        "contact": "Contact"
+    },
+    "notFound": "Page does not exist"
+}

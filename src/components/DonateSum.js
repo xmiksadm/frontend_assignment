@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { useSelector, useDispatch } from 'react-redux';
-import { bindActionCreators } from "redux";
+import { useSelector, useDispatch } from 'react-redux'
+import { bindActionCreators } from "redux"
 import { actionCreators } from "../state/index"
+import { useTranslation } from "react-i18next"
 
 const Buttons = styled.table `
     width: 80%;
@@ -56,6 +57,8 @@ const Input = styled.input `
 `
 
 const DonateSum = () => {
+    
+    const { t } = useTranslation()
 
     const [selectedButton, setSelectedButton]  = useState(null);
 
@@ -73,7 +76,7 @@ const DonateSum = () => {
 
     return (
         <div>
-            <h3>Suma, ktorou chcem prispieť: {money}</h3>
+            <h3>{t("sum")}: {money}</h3>
 
             <Buttons> 
                 {[5, 10, 20, 30, 50, 100].map(key => 

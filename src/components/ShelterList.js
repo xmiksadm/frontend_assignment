@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { useDispatch } from 'react-redux';
 import { bindActionCreators } from "redux";
 import { actionCreators } from "../state/index"
+import { useTranslation } from "react-i18next";
 
 const Dropdown = styled.select `
     background: #FFFFFF;
@@ -28,6 +29,8 @@ const Dropdown = styled.select `
 
 const ShelterList = ( {shelters} ) => {
 
+    const { t } = useTranslation()
+
     const dispatch = useDispatch();
     // action creators
     const AC = bindActionCreators(actionCreators, dispatch)
@@ -42,7 +45,7 @@ const ShelterList = ( {shelters} ) => {
         <div>
             <Dropdown placeholder="" defaultValue={'DEFAULT'} onChange={e => chooseShelter(e.target.value) }>
                 <option value="DEFAULT" disabled>
-                    Vyberte útulok zo zoznamu
+                    {t("chooseShelter")}
                 </option>
                 {shelters.map(shelter => (
                         <option key={shelter.id} value={JSON.stringify(shelter)}>{shelter.name}</option>

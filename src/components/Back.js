@@ -1,12 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { useTranslation } from "react-i18next";
 
 const BackButton = styled.button `
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 20px 24px;
+    justify-content: center;
+    /* padding: 20px 24px; */
     border: none;
     cursor: pointer;
     width: 81px;
@@ -33,10 +35,12 @@ const BackButton = styled.button `
 `
 
 const Back = (link) => {
+
+    const { t } = useTranslation()
         
     return (
         <Link to={link.link} style={{ textDecoration: 'none' }}>
-            <BackButton>Späť</BackButton>
+            <BackButton>{t("back")}</BackButton>
         </Link>
     )
 }

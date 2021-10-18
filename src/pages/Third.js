@@ -1,12 +1,13 @@
 import Label from '../components/Label'
 import Slider from "../components/Slider"
-import Back from "../components/Back";
+import Back from "../components/Back"
 import styled from 'styled-components'
 import SubmitButton from '../components/SubmitButton'
 import Checkbox from '../components/Checkbox'
-import { useSelector, useDispatch } from 'react-redux';
-import { bindActionCreators } from "redux";
-import { actionCreators } from "../state/index"
+import { useSelector } from 'react-redux'
+// import { bindActionCreators } from "redux"
+// import { actionCreators } from "../state/index"
+import { useTranslation } from "react-i18next"
 
 const Text = styled.div `
     font-weight: 800;
@@ -32,14 +33,14 @@ const ButtonGroup = styled.div`
 
 function Third() {
 
-    // const [isPending, setIsPending] = useState(false);
+    const { t } = useTranslation()
 
     const type = useSelector((state) => state.donateType)
     let donateType = ""
     if (type === "ALL")
-        donateType = "Chcem finančne prispieť celej nadácii"
+        donateType = t("thirdPage.donateTypeAll")
     else if (type === "ONE")
-        donateType = "Chcem finančne prispieť konkretnemu útulku"
+        donateType = t("thirdPage.donateTypeOne")
     
     const money = useSelector((state) => state.money)
     const shelterName = useSelector((state) => state.shelter)
@@ -49,9 +50,9 @@ function Third() {
     const phone = useSelector((state) => state.phone)
     const agree = useSelector((state) => state.agree)
 
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     // action creators
-    const AC = bindActionCreators(actionCreators, dispatch)
+    // const AC = bindActionCreators(actionCreators, dispatch)
 
     function checkAll() {
         if (money > 0 && name !== "" && surname !== "" && email !== "" && phone.length > 9) 
@@ -63,9 +64,9 @@ function Third() {
     return (
         <div>
             <Slider active={3} />
-            <Label text={"Skontrolujte si zadané údaje"} />
+            <Label text={t("label.third")} />
 
-            <Text>Akou formou chcem pomôcť</Text>
+            <Text>{t("thirdPage.donateType")}</Text>
             <TextCheck>{donateType}</TextCheck>
             {
                 !shelterName 
@@ -73,17 +74,17 @@ function Third() {
                 <div></div>
                 :
                 <div>
-                    <Text>Najviac mi záleží na útulku</Text>
+                    <Text>{t("thirdPage.oneShelter")}</Text>
                     <TextCheck>{shelterName.name}</TextCheck>
                 </div>
             }
-            <Text>Suma ktorou chcem pomôcť</Text>
+            <Text>{t("thirdPage.sum")}</Text>
             <TextCheck>{money}</TextCheck>
-            <Text>Meno a priezvisko</Text>
+            <Text>{t("thirdPage.name")}</Text>
             <TextCheck>{name} {surname}</TextCheck>
-            <Text>E-mailová adresa</Text>
+            <Text>{t("thirdPage.email")}</Text>
             <TextCheck>{email}</TextCheck>
-            <Text>Telefónne číslo</Text>
+            <Text>{t("thirdPage.phone")}</Text>
             <TextCheck>+{phone}</TextCheck>
 
             <Checkbox />

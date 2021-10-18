@@ -1,0 +1,49 @@
+{
+    "foundationName": "Nadácia Good Boy",
+    "label": {
+        "first": "Vyberte si možnosť, ako chcete pomôcť",
+        "second": "Potrebujeme od Vás zopár informácií",
+        "third": "Skontrolujte si zadané údaje"
+    },
+    "buttonOne": "Chcem finančne prispieť konkrétnemu útulku",
+    "buttonTwo": "Chcem finančne prispieť celej nadácii",
+    "shelter": "Útulok",
+    "chooseShelter": "Vyberte útulok zo zoznamu",
+    "sum": "Suma, ktorou chcem prispieť",
+    "form": {
+        "firstName": "Meno",
+        "placeholderFirstName": "Zadajte Vaše meno",
+        "lastName": "Priezvisko",
+        "placeholderLastName": "Zadajte Vaše priezvisko",
+        "email": "E-mailová adresa",
+        "placeholderEmail": "Zadajte Váš e-mail",
+        "phone": "Telefónne číslo",
+        "placeholderPhone": "Zadajte Vaše telefónne číslo",
+        "required": "*Povinné pole",
+        "greaterThanTwo": "Musí byť väčšie ako 2 charaktery",
+        "lessThanTwenty": "Musí byť menšie ako 20 charakterov",
+        "lessThanThirty": "Musí byť menšie ako 30 charakterov",
+        "wrongEmail": "Nesprávny formát email adresy"
+    },
+    "thirdPage": {
+        "donateType": "Akou formou chcem pomôcť",
+        "donateTypeAll": "Chcem finančne prispieť celej nadácii",
+        "donateTypeOne": "Chcem finančne prispieť konkretnemu útulku",
+        "oneShelter": "Najviac mi záleží na útulku",
+        "sum": "Suma ktorou chcem pomôcť",
+        "name": "Meno a priezvisko",
+        "email": "E-mailová adresa",
+        "phone": "Telefónne číslo"
+    },
+    "continue": "Pokračovať",
+    "back": "Späť",
+    "checkbox": "Súhlasím so spracovaním mojich osobných údajov",
+    "submitButton": "Odoslať formulár",
+    "sending": "Odosielam...",
+    "footer": {
+        "about": "O projekte",
+        "instructions": "Ako na to",
+        "contact": "Kontakt"
+    },
+    "notFound": "Stránka neexistuje"
+}

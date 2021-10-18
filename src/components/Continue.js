@@ -1,13 +1,13 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { useHistory } from 'react-router-dom'
+import { useTranslation } from "react-i18next";
 
 const ContinueButton = styled.button `
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
-    padding: 19px 23px;
     margin-bottom: 20%;
     border: none;
     cursor: pointer;
@@ -38,6 +38,8 @@ const ContinueButton = styled.button `
 
 const Continue = (link) => {
 
+    const { t } = useTranslation()
+
     const history = useHistory();
 
     function handle(e, link) {
@@ -55,7 +57,7 @@ const Continue = (link) => {
         
     return (
         // <Link to={link.link} style={{ textDecoration: 'none' }} > 
-            <ContinueButton onClick={(e) => { handle(e, link.link) }}>Pokračovať</ContinueButton>
+            <ContinueButton onClick={(e) => { handle(e, link.link) }}>{t("continue")}</ContinueButton>
         // </Link>
     )
 }

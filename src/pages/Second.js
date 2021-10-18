@@ -1,16 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Slider from "../components/Slider"
 import Label from '../components/Label'
 import Back from '../components/Back'
 import Continue from '../components/Continue'
 import styled from 'styled-components'
 import { useHistory } from 'react-router-dom'
+import { useTranslation } from "react-i18next";
 
 import { useForm, Controller  } from 'react-hook-form'
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { bindActionCreators } from "redux";
 import { actionCreators } from "../state/index"
 
@@ -52,10 +53,8 @@ const Info = styled.div `
 `
 
 function Second() {
-    // const [firstname, setName] = useState('');
-    // const [surname, setSurname] = useState('');
-    // const [email, setEmail] = useState('');
-    // const [phone, setPhone] = useState('');
+
+    const { t } = useTranslation()
 
     const { register, handleSubmit, formState: { errors }, trigger, control } = useForm({
         defaultValues: { firstname: "", surname: "", email: "", phone: "" },
@@ -63,11 +62,10 @@ function Second() {
 
     // const { field } = useController({ name: 'test' })
 
-
-    const name = useSelector((state) => state.name)
-    const lastName = useSelector((state) => state.surname)
-    const email = useSelector((state) => state.email)
-    const phone = useSelector((state) => state.phone)
+    // const name = useSelector((state) => state.name)
+    // const lastName = useSelector((state) => state.surname)
+    // const email = useSelector((state) => state.email)
+    // const phone = useSelector((state) => state.phone)
     const history = useHistory();
 
     // DISPATCH -> Execute the action, dispatch this action to the reducer
@@ -91,41 +89,41 @@ function Second() {
         <div>
 
         <Slider active={2} />
-        <Label text={"Potrebujeme od Vás zopár informácií"}/>
+        <Label text={t("label.second")}/>
             <form onSubmit={handleSubmit(onSubmit)} id='my-form'>
-                <Info>Meno</Info>
+                <Info>{t("form.firstName")}</Info>
                 <Input 
-                    placeholder="Zadajte Vaše meno"
+                    placeholder={t("form.placeholderFirstName")}
                     {...register('firstname', 
-                                { required: "*Povinné pole", 
+                                { required: t("form.required"), 
                                 type: "text",
-                                minLength: {value: 2, message: "Musí byť väčšie ako 2 charaktery"}, 
-                                maxLength: {value: 20, message: "Musí byť menšie ako 20 charakterov"} })}
+                                minLength: {value: 2, message: t("form.greaterThanTwo")}, 
+                                maxLength: {value: 20, message: t("form.lessThanTwenty")} })}
                     onKeyUp={() => {
                         trigger('firstname')
                     }}
                 />
                 {errors.firstname && <p style={{color: 'red'}}>{errors.firstname.message}</p>}
                 <br/>
-                <Info>Priezvisko</Info>
+                <Info>{t("form.lastName")}</Info>
                 <Input 
-                    placeholder="Zadajte Vaše priezvisko"
+                    placeholder={t("form.placeholderLastName")}
                     {...register('surname', 
-                                { required: "*Povinné pole", 
+                                { required: t("form.required"), 
                                 type: "text",
-                                minLength: {value: 2, message: "Musí byť väčšie ako 2 charaktery"}, 
-                                maxLength: {value: 30, message: "Musí byť menšie ako 30 charakterov"} })}
+                                minLength: {value: 2, message: t("form.greaterThanTwo")}, 
+                                maxLength: {value: 30, message: t("form.lessThanThirty")} })}
                     onKeyUp={() => {
                         trigger('surname')
                     }}
                 />
                 {errors.surname && <p style={{color: 'red'}}>{errors.surname.message}</p>}
                 <br/>
-                <Info>E-mailová adresa</Info>
+                <Info>{t("form.email")}</Info>
                 <Input 
-                    placeholder="Zadajte Váš e-mail"
-                    {...register('email', { required: "*Povinné pole",
-                                pattern: {value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i, message: "Nesprávny formát email adresy"},
+                    placeholder={t("form.placeholderEmail")}
+                    {...register('email', { required: t("form.required"),
+                                pattern: {value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i, message: t("form.wrongEmail")},
                                 type: "email"})}
                     onKeyUp={() => {
                         trigger('email')
@@ -133,7 +131,7 @@ function Second() {
                 />
                 {errors.email && <p style={{color: 'red'}}>{errors.email.message}</p>}
                 <br/>
-                <Info>Telefónne číslo</Info>
+                <Info>{t("form.phone")}</Info>
                 <div >
                 <Controller
                     name='phone'

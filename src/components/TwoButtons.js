@@ -5,6 +5,7 @@ import PetsOutlinedIcon from '@mui/icons-material/PetsOutlined';
 import { useDispatch } from 'react-redux';
 import { bindActionCreators } from "redux";
 import { actionCreators } from "../state/index"
+import { useTranslation } from "react-i18next";
 
 const Pet = styled(PetsOutlinedIcon) `
     filter: invert(100%);
@@ -87,6 +88,8 @@ const Button = styled(ButtonGroup)`
 
 const TwoButtons = () => {
 
+    const { t } = useTranslation()
+
     const [activeLeft, setActiveLeft] = useState(false);
     const [activeRight, setActiveRight] = useState(true);
 
@@ -115,10 +118,10 @@ const TwoButtons = () => {
         <div>
             <ButtonGroup>
                 <Button left active={activeLeft} onClick={handleButtonLeft} >
-                    <Wallet />Chcem finančne prispieť konkrétnemu útulku
+                    <Wallet />{t("buttonOne")}
                 </Button>
                 <Button right active={activeRight} onClick={handleButtonRight}>
-                    <Pet />Chcem finančne prispieť celej nadácii
+                    <Pet />{t("buttonTwo")}
                 </Button>
             </ButtonGroup>
         </div>
